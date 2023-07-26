@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DOGS } from '../mock-dogs';
+import { Dog } from '../dog';
+import { DogService } from '../dog.service';
 
 @Component({
   selector: 'app-dogs',
@@ -7,5 +8,16 @@ import { DOGS } from '../mock-dogs';
   styleUrls: ['./dogs.component.css']
 })
 export class DogsComponent {
-  dogs = DOGS;
+  dogs: Dog[] = [];
+
+  constructor(private dogService: DogService) {}
+
+  ngOnInit(): void {
+    this.getDogs();
+  }
+
+  getDogs(): void {
+    this.dogService.getDogs()
+      .subscribe(dogs => this.dogs = dogs);
+  }
 }
