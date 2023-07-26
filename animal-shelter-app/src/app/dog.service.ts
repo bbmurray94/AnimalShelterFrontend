@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Dog } from './dog';
-import { DOGS } from './mock-dogs';
 
 @Injectable({
   providedIn: 'root'

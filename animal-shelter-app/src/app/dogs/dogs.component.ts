@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Dog } from '../dog';
 import { DogService } from '../dog.service';
-import { DOGS } from '../mock-dogs';
 
 @Component({
   selector: 'app-dogs',
