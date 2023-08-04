@@ -1,8 +1,12 @@
 <h2>Dogs</h2>
 <ul class="dogs">
     <li *ngFor="let dog of dogs">
-        <span class="badge">{{dog.id}}</span>
+        <button>
         <span class="name">{{dog.name}}</span>
+        <span class="level">{{dog.level}}</span>
+        <span class="location">{{dog.location}}</span>
+        <button class="edit">Edit</button>
+        </button>
     </li>
 </ul>
 
