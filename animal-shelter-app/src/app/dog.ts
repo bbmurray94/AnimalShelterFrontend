@@ -11,9 +11,13 @@ export interface Dog {
     age: number;
 }
 
-enum Level
+export enum Level
 {
-    Blue, BlueGreen, Green, Yellow, Red
+    Blue = "Blue", 
+    BlueGreen = "BlueGreen", 
+    Green = "Green", 
+    Yellow = "Yellow", 
+    Red = "Red"
 }
 
 enum Sex

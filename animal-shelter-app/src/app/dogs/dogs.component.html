@@ -1,9 +1,8 @@
-<h2>Dogs</h2>
 <div class="dogs"*ngFor="let dog of dogs; let i = index">
         <button class="buttons" (mouseenter)="showButton[i] = true"
         (mouseleave)="showButton[i] = false">
             <span class="name">{{dog.name}}</span>
-            <span class="level">{{dog.level}}</span>
+            <span [ngClass]="getFontColor(dog.level)">{{dog.level}}</span>
             <span class="houseBroken" *ngIf="dog.isHouseBroken">HB</span>
             <span class="humaneInvestigation" *ngIf="dog.underHumaneInvestigation">HI</span>
             <span class="location">{{dog.location}}</span>
