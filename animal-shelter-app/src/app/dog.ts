@@ -9,6 +9,7 @@ export interface Dog {
     breed: string;
     description: string;
     age: number;
+    kennelNumber: string;
 }
 
 export enum Level
