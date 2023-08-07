@@ -9,6 +9,7 @@ import { DogService } from '../dog.service';
 })
 export class DogsComponent {
   dogs: Dog[] = [];
+  showButton: boolean[] = new Array(this.dogs.length).fill(false);
 
   constructor(private dogService: DogService) {}
 

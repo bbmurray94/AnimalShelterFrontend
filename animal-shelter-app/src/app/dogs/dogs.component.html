@@ -1,11 +1,10 @@
 <h2>Dogs</h2>
-<ul class="dogs">
-    <li *ngFor="let dog of dogs">
-        <button>
+<div class="dogs"*ngFor="let dog of dogs; let i = index">
+        <button class="buttons" (mouseenter)="showButton[i] = true"
+        (mouseleave)="showButton[i] = false">
             <span class="name">{{dog.name}}</span>
             <span class="level">{{dog.level}}</span>
             <span class="location">{{dog.location}}</span>
-            <button class="edit">Edit</button>
+            <button *ngIf="showButton[i]" class="edit">Edit</button>
         </button>
-    </li>
-</ul>
+</div>

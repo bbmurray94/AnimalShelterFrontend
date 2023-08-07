@@ -16,7 +16,7 @@ h1 {
     color: #333;
     font-family: Cambria, Georgia, serif;
   }
-  button {
+  .buttons {
     background-color: #eee;
     border: none;
     border-radius: 4px;
@@ -28,14 +28,18 @@ h1 {
     margin-bottom: 1rem;
     margin-top: 1rem;
   }
-  button:hover {
+  .buttons:hover {
     background-color: black;
     color: white;
   }
-  button:disabled {
+  .buttons:disabled {
     background-color: #eee;
     color: #aaa;
     cursor: auto;
+  }
+
+  span {
+    padding: 1em;
   }
   
   /* everywhere else */
