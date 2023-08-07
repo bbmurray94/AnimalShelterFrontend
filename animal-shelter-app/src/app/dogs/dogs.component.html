@@ -4,6 +4,8 @@
         (mouseleave)="showButton[i] = false">
             <span class="name">{{dog.name}}</span>
             <span class="level">{{dog.level}}</span>
+            <span class="houseBroken" *ngIf="dog.isHouseBroken">HB</span>
+            <span class="humaneInvestigation" *ngIf="dog.underHumaneInvestigation">HI</span>
             <span class="location">{{dog.location}}</span>
             <button *ngIf="showButton[i]" class="edit">Edit</button>
         </button>
