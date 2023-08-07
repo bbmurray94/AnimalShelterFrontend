@@ -3,7 +3,7 @@ export interface Dog {
     name: string;
     level: string;
     isHouseBroken: boolean;
-    humaneInvestigation: boolean;
+    underHumaneInvestigation: boolean;
     location: string;
     sex: string;
     breed: string;
