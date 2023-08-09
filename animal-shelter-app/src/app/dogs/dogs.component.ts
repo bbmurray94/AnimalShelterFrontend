@@ -10,10 +10,18 @@ import { DogService } from '../dog.service';
 })
 export class DogsComponent {
   dogs: Dog[] = [];
-  showButton: boolean[] = new Array(this.dogs.length).fill(false);
-  displayValue = Level.Blue;
+  displayedColumns: string[] = ["name", "level", "isHouseBroken", "underHumaneInvestigation", "location", "kennelNumber", "edit"];
+  showButtonForDog: any;
 
   constructor(private dogService: DogService) {}
+
+  onRowMouseEnter(dog: any) {
+    this.showButtonForDog = dog;
+  }
+
+  onRowMouseLeave() {
+      this.showButtonForDog = null;
+  }
 
   ngOnInit(): void {
     this.getDogs();
