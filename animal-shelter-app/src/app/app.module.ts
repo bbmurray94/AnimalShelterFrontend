@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { MatTableModule } from '@angular/material/table'
+import {MatButtonModule} from '@angular/material/button';  
 import { DogsComponent } from './dogs/dogs.component';
 
 @NgModule({
@@ -11,7 +13,9 @@ import { DogsComponent } from './dogs/dogs.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
