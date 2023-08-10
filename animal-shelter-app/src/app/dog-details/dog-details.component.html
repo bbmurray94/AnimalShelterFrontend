@@ -1,2 +1,11 @@
-<p>dog-details works!</p>
-<h1>{{id}}</h1>
+<div *ngIf="dog">
+    <h2>{{dog.name}}</h2>
+    <p>Breed:  {{dog.breed}}</p>
+    <p>Age: {{dog.age}}</p>
+    <p>{{dog.sex}}</p>
+    <p>{{dog.level}}</p>
+    <p>{{dog.description}}</p>
+    <p>Location: {{dog.location}} {{dog.kennelNumber}}</p>
+    <p *ngIf="dog.underHumaneInvestigation">HI</p>
+    <p *ngIf="dog.isHouseBroken">HB</p>
+</div>
