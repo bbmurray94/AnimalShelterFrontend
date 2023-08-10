@@ -17,6 +17,10 @@ h1 {
     font-family: Cambria, Georgia, serif;
   }
 
+  .mat-mdc-row:hover  .mat-mdc-cell{
+    background-color: lightgray;
+  }
+
   .mat-column-edit {
     min-width: 100px;
   }
