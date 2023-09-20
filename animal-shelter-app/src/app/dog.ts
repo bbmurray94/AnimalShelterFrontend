@@ -1,5 +1,5 @@
 export interface Dog {
-    id: number;
+    id?: number;
     name: string;
     level: Level;
     isHouseBroken: boolean;
@@ -21,7 +21,9 @@ export enum Level
     Red = "Red"
 }
 
-enum Sex
+export enum Sex
 {
-    Unknown, Male, Female
+    Unknown = "Unknown", 
+    Male = "Male", 
+    Female = "Female"
 }
