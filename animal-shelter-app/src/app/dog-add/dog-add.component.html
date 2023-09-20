@@ -1,0 +1,51 @@
+<form>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput id="name" type="text">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Age</mat-label>
+        <input matInput id="age" type="number">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Breed</mat-label>
+        <input matInput id="breed" type="text">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput id="description" type="text">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <mat-label>Location</mat-label>
+        <input matInput id="location" type="text">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Kennel #</mat-label>
+        <input matInput id="kennelNumber" type="text">
+    </mat-form-field>
+    <br>
+    <mat-radio-group [(ngModel)]="selectedSex" [ngModelOptions]="{standalone: true}">
+        <mat-radio-button value="Unknown">Unknown</mat-radio-button>
+        <mat-radio-button value="Male">Male</mat-radio-button>
+        <mat-radio-button value="Female">Female</mat-radio-button>
+    </mat-radio-group>
+    <br>
+    <h4>Level</h4>
+    <mat-form-field>
+        <mat-select [(value)]="selectedLevel">
+          <mat-option value="Blue">Blue</mat-option>
+          <mat-option value="BlueGreen">Blue/Green</mat-option>
+          <mat-option value="Green">Green</mat-option>
+          <mat-option value="Yellow">Yellow</mat-option>
+          <mat-option value="Red">Red</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-checkbox id="houseBroken" [(ngModel)]="isHouseBroken" [ngModelOptions]="{standalone: true}">House Broken</mat-checkbox>
+      <mat-checkbox id="humaneInvestigation" [(ngModel)]="underHumaneInvestigation" [ngModelOptions]="{standalone: true}">Humane Investigation</mat-checkbox>
+</form>
+<button mat-raised-button (click)="addDog()">Add</button>
+
+
