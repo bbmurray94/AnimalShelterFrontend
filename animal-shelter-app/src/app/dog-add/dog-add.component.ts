@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Dog } from '../dog';
 import { Level } from '../dog';
 import { Sex } from '../dog';
+import { DogService } from '../dog.service';
 
 @Component({
   selector: 'app-dog-add',
@@ -9,16 +10,20 @@ import { Sex } from '../dog';
   styleUrls: ['./dog-add.component.css']
 })
 export class DogAddComponent {
+  constructor(private dogService: DogService,
+    ) {}
   isHouseBroken = false;
   underHumaneInvestigation = false;
   selectedLevel: string = "Blue";
   selectedSex: string = "Unknown";
+  dog: Dog | undefined;
 
   addDog()
   {
-    console.log(this.createDog());
-    //this.createDog
-    //call addDog request
+    const dog = this.createDog();
+    console.log(dog);
+    this.dogService.addDog(dog)
+      .subscribe(dog => this.dog = dog)
   }
 
   createDog(): Dog
