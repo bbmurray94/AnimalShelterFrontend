@@ -18,4 +18,8 @@ export class DogService {
   getDog(id: number): Observable<Dog>{
     return this.http.get<Dog>(this.dogsUrl + id);
   }
+
+  addDog(dog: Dog): Observable<Dog> {
+    return this.http.post<Dog>(this.dogsUrl, dog);
+  }
 }
