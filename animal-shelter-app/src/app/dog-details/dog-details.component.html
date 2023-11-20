@@ -1,11 +1,59 @@
 <div *ngIf="dog">
-    <h2>{{dog.name}}</h2>
-    <p>Breed:  {{dog.breed}}</p>
-    <p>Age: {{dog.age}}</p>
-    <p>{{dog.sex}}</p>
-    <p>{{dog.level}}</p>
-    <p>{{dog.description}}</p>
-    <p>Location: {{dog.location}} {{dog.kennelNumber}}</p>
-    <p *ngIf="dog.underHumaneInvestigation">HI</p>
-    <p *ngIf="dog.isHouseBroken">HB</p>
+    <div *ngIf="editMode == false">
+        <h2>{{dog.name}}</h2>
+        <p>Age: {{dog.age}}</p>
+        <p>Breed:  {{dog.breed}}</p>
+        <p>{{dog.description}}</p>
+        <p>Location: {{dog.location}} {{dog.kennelNumber}}</p>
+        <p>{{dog.sex}}</p>
+        <p>{{dog.level}}</p>
+        <p *ngIf="dog.underHumaneInvestigation">HI</p>
+        <p *ngIf="dog.isHouseBroken">HB</p>
+        <button mat-raised-button (click)="toggleEditMode()">Edit</button>
+    </div>
+    <form *ngIf="editMode">
+        <mat-form-field>
+            <input matInput id="name" type="text" value="{{dog.name}}">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Age: </mat-label>
+            <input matInput id="age" type="number" value="{{dog.age}}">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Breed: </mat-label>
+            <input matInput id="breed" type="text" value="{{dog.breed}}">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Location</mat-label>
+            <input matInput id="location" type="text" value="{{dog.location}}">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Kennel Number</mat-label>
+            <input matInput id="kennelNumber" type="text" value="{{dog.kennelNumber}}">
+        </mat-form-field>
+        <br>
+        <mat-radio-group [(ngModel)]="selectedSex" [ngModelOptions]="{standalone: true}">
+            <mat-radio-button value="Unknown">Unknown</mat-radio-button>
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+        <br>
+        <mat-form-field>
+            <mat-select [(value)]="selectedLevel">
+              <mat-option value="Blue">Blue</mat-option>
+              <mat-option value="BlueGreen">Blue/Green</mat-option>
+              <mat-option value="Green">Green</mat-option>
+              <mat-option value="Yellow">Yellow</mat-option>
+              <mat-option value="Red">Red</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-checkbox id="houseBroken" [(ngModel)]="isHouseBroken" [ngModelOptions]="{standalone: true}">House Broken</mat-checkbox>
+        <mat-checkbox id="humaneInvestigation" [(ngModel)]="underHumaneInvestigation" [ngModelOptions]="{standalone: true}">Humane Investigation</mat-checkbox>
+        <br>
+        <button mat-raised-button (click)="toggleEditMode()">Cancel</button>
+        <button mat-raised-button (click)="updateDog()">Submit</button>
+    </form>
 </div>
