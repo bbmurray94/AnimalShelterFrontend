@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Dog } from '../dog';
 import { Level } from '../dog';
 import { Sex } from '../dog';
@@ -11,6 +12,7 @@ import { DogService } from '../dog.service';
 })
 export class DogAddComponent {
   constructor(private dogService: DogService,
+              private router: Router
     ) {}
   isHouseBroken = false;
   underHumaneInvestigation = false;
@@ -23,7 +25,8 @@ export class DogAddComponent {
     const dog = this.createDog();
     console.log(dog);
     this.dogService.addDog(dog)
-      .subscribe(dog => this.dog = dog)
+      .subscribe(dog => this.dog = dog);
+    this.router.navigate(['/dogs']);
   }
 
   createDog(): Dog
