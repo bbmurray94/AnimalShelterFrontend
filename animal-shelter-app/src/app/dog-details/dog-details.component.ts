@@ -40,6 +40,7 @@ export class DogDetailsComponent {
     console.log(dog);
     this.dogService.updateDog(dog.id!, dog)
       .subscribe(dog => this.dog = dog)
+    this.editMode = false;
   }
 
   toggleEditMode(): void{
