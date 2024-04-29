@@ -26,4 +26,7 @@ export class DogService {
   updateDog(id: number, dog: Dog): Observable<Dog>{
     return this.http.put<Dog>(this.dogsUrl + id, dog);
   }
+  deleteDog(id: number): Observable<Dog>{
+    return this.http.delete<Dog>(this.dogsUrl+ id);
+  }
 }

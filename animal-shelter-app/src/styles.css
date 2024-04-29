@@ -5,7 +5,7 @@ h1 {
     font-size: 250%;
   }
   h2, h3 {
-    color: #444;
+    color: #36566a;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
   }
@@ -23,6 +23,9 @@ h1 {
 
   .mat-column-edit {
     min-width: 100px;
+  }
+  .mat-column-delete {
+    min-width: 110px;
   }
 
   .blue{

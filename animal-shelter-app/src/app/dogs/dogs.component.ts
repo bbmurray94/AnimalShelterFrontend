@@ -10,7 +10,8 @@ import { DogService } from '../dog.service';
 })
 export class DogsComponent {
   dogs: Dog[] = [];
-  displayedColumns: string[] = ["name", "level", "isHouseBroken", "underHumaneInvestigation", "location", "kennelNumber", "edit"];
+  displayedColumns: string[] = ["name", "level", "isHouseBroken", "underHumaneInvestigation", "location", "kennelNumber", "edit", "delete"];
+
   showButtonForDog: any;
 
   constructor(private dogService: DogService) {}
@@ -30,6 +31,14 @@ export class DogsComponent {
   getDogs(): void {
     this.dogService.getDogs()
       .subscribe(dogs => this.dogs = dogs);
+  }
+
+  clickDelete(event: MouseEvent, dog: any)
+  {
+    event.stopPropagation();
+    if(confirm("Are you sure you want to delete " + dog.name )){
+      this.dogService.deleteDog(dog.id).subscribe(()=> {this.getDogs()});
+    }
   }
 
   getFontColor(value: Level): string{
