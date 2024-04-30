@@ -12,6 +12,7 @@
         <button mat-raised-button (click)="toggleEditMode()">Edit</button>
     </div>
     <form *ngIf="editMode">
+        
         <mat-form-field>
             <input matInput id="name" type="text" value="{{dog.name}}">
         </mat-form-field>
