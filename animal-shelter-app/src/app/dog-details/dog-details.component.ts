@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { Dog } from '../dog';
 import { Level } from '../dog';
@@ -26,6 +26,8 @@ export class DogDetailsComponent {
   selectedLevel: string = "Blue";
 
   ngOnInit(): void{
+    this.editMode = Boolean(this.route.snapshot.paramMap.get('edit'));
+    console.log(this.route.snapshot.paramMap.get('edit'));
     this.getDog();
   }
 
