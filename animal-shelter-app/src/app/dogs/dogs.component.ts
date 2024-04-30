@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Dog } from '../dog';
 import { Level } from '../dog';
 import { DogService } from '../dog.service';
@@ -14,7 +15,7 @@ export class DogsComponent {
 
   showButtonForDog: any;
 
-  constructor(private dogService: DogService) {}
+  constructor(private dogService: DogService, private router: Router) {}
 
   onRowMouseEnter(dog: any) {
     this.showButtonForDog = dog;
@@ -31,6 +32,11 @@ export class DogsComponent {
   getDogs(): void {
     this.dogService.getDogs()
       .subscribe(dogs => this.dogs = dogs);
+  }
+
+  clickEdit(event: MouseEvent, dog: any){
+    event.stopPropagation();
+    this.router.navigate([`/dogs/${dog.id}/details`, {edit: true}]);
   }
 
   clickDelete(event: MouseEvent, dog: any)
