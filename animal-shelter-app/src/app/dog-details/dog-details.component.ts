@@ -27,7 +27,6 @@ export class DogDetailsComponent {
 
   ngOnInit(): void{
     this.editMode = Boolean(this.route.snapshot.paramMap.get('edit'));
-    console.log(this.route.snapshot.paramMap.get('edit'));
     this.getDog();
   }
 
