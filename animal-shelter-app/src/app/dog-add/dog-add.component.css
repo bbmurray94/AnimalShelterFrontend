@@ -1,0 +1,16 @@
+form {
+    margin: 10px;
+    flex-direction: column;
+}
+form mat-form-field {
+    margin: 10px;
+    padding: 10px;
+}
+
+input, mat-radio-button {
+    padding: 10px;
+}
+
+mat-checkbox {
+    padding: 50px;
+}

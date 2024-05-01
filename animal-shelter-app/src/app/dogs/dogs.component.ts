@@ -29,6 +29,10 @@ export class DogsComponent {
     this.getDogs();
   }
 
+  ngAfterViewInit(): void {
+    this.getDogs();
+  }
+
   getDogs(): void {
     this.dogService.getDogs()
       .subscribe(dogs => this.dogs = dogs);
