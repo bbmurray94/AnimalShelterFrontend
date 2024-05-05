@@ -25,8 +25,11 @@ export class DogAddComponent {
     const dog = this.createDog();
     console.log(dog);
     this.dogService.addDog(dog)
-      .subscribe(dog => this.dog = dog);
-    this.router.navigate(['/dogs']);
+      .subscribe(({
+        complete: () => { 
+          this.router.navigate(['/dogs'])
+        }
+      }));
   }
 
   createDog(): Dog
