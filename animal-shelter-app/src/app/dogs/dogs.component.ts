@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Dog } from '../dog';
 import { Level } from '../dog';
-import { DogService } from '../dog.service';
+import { DogsService } from '../dogs.service';
 
 @Component({
   selector: 'app-dogs',
@@ -15,7 +15,7 @@ export class DogsComponent {
 
   showButtonForDog: any;
 
-  constructor(private dogService: DogService, private router: Router) {}
+  constructor(private dogService: DogsService, private router: Router) {}
 
   onRowMouseEnter(dog: any) {
     this.showButtonForDog = dog;
