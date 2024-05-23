@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { Dog } from '../dog';
 import { Level } from '../dog';
 import { Sex } from '../dog';
-import { DogService } from '../dog.service';
+import { DogsService } from '../dogs.service';
 
 @Component({
   selector: 'app-dog-details',
@@ -14,7 +14,7 @@ import { DogService } from '../dog.service';
 export class DogDetailsComponent {
   constructor(
     private route: ActivatedRoute,
-    private dogService: DogService,
+    private dogService: DogsService,
     private location: Location
   ) {}
   

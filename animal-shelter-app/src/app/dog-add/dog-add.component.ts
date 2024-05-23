@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Dog } from '../dog';
 import { Level } from '../dog';
 import { Sex } from '../dog';
-import { DogService } from '../dog.service';
+import { DogsService } from '../dogs.service';
 
 @Component({
   selector: 'app-dog-add',
@@ -11,7 +11,7 @@ import { DogService } from '../dog.service';
   styleUrls: ['./dog-add.component.css']
 })
 export class DogAddComponent {
-  constructor(private dogService: DogService,
+  constructor(private dogService: DogsService,
               private router: Router
     ) {}
   isHouseBroken = false;
@@ -50,3 +50,4 @@ export class DogAddComponent {
     return dog;
   } 
 }
+

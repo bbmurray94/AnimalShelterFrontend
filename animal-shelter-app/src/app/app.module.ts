@@ -11,20 +11,22 @@ import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DogsComponent } from './dogs/dogs.component';
+
 import { AppRoutingModule } from './app-routing.module';
-import { DogDetailsComponent } from './dog-details/dog-details.component';
+import { DogsComponent } from './dogs/dogs.component';
 import { DogAddComponent } from './dog-add/dog-add.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DogDetailsComponent } from './dog-details/dog-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DogsComponent,
-    DogDetailsComponent,
-    DogAddComponent
+    DogAddComponent,
+    DogDetailsComponent
   ],
   imports: [
+    BrowserModule,
     NgFor,
     BrowserModule,
     HttpClientModule,
@@ -35,9 +37,9 @@ import { DogAddComponent } from './dog-add/dog-add.component';
     MatInputModule,
     MatRadioModule,
     MatSelectModule,
-    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
