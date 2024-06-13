@@ -1,0 +1,59 @@
+<mat-form-field>
+    <input matInput [matDatepicker]="picker" [value]="selectedDate"
+    (dateInput)="addEvent($event)">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+<table mat-table [dataSource]="board">
+    <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef>Location</th>
+        <td mat-cell *matCellDef="let b"> {{b.location}}-{{b.kennelNumber}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let b">{{b.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="level">
+        <th mat-header-cell *matHeaderCellDef>Level</th>
+        <td mat-cell *matCellDef="let b">{{b.level}}</td>
+    </ng-container>
+    <ng-container matColumnDef="HB">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let b">
+            <div *ngIf="b.isHouseBroken">HB</div>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="HI">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let b">
+            <div *ngIf="b.underHumaneInvestigation">HI</div>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="morning">
+        <th mat-header-cell *matHeaderCellDef>Morning</th>
+        <td mat-cell *matCellDef="let b"> 
+            <div *ngIf="b.morning != null">
+                {{b.morning.firstName[0]}}{{b.morning.lastName[0]}}
+            </div>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="afternoon">
+        <th mat-header-cell *matHeaderCellDef>Afternoon</th>
+        <td mat-cell *matCellDef="let b"> 
+            <div *ngIf="b.afternoon != null">
+                {{b.afternoon.firstName[0]}}{{b.afternoon.lastName[0]}}
+            </div>
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="evening">
+        <th mat-header-cell *matHeaderCellDef>Evening</th>
+        <td mat-cell *matCellDef="let b"> 
+            <div *ngIf="b.evening != null">
+                {{b.evening.firstName[0]}}{{b.evening.lastName[0]}}
+            </div>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
