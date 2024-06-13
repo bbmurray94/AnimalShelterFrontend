@@ -11,19 +11,22 @@ import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 import { AppRoutingModule } from './app-routing.module';
 import { DogsComponent } from './dogs/dogs.component';
 import { DogAddComponent } from './dog-add/dog-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DogDetailsComponent } from './dog-details/dog-details.component';
+import { BoardComponent } from './board/board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DogsComponent,
     DogAddComponent,
-    DogDetailsComponent
+    DogDetailsComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,8 @@ import { DogDetailsComponent } from './dog-details/dog-details.component';
     MatRadioModule,
     MatSelectModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
