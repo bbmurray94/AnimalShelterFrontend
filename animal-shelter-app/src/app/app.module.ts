@@ -19,6 +19,7 @@ import { DogAddComponent } from './dog-add/dog-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DogDetailsComponent } from './dog-details/dog-details.component';
 import { BoardComponent } from './board/board.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BoardComponent } from './board/board.component';
     DogsComponent,
     DogAddComponent,
     DogDetailsComponent,
-    BoardComponent
+    BoardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
