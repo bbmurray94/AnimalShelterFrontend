@@ -67,7 +67,12 @@
               "browserTarget": "animal-shelter-app:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "ssl": true,
+            "sslKey": "C:/Users/benja/key.pem",
+            "sslCert": "C:/Users/benja/cert.pem"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
