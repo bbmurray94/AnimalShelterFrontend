@@ -1,4 +1,8 @@
 <h1>{{title}}</h1>
+<div *ngIf="currentUser">
+    <p>Hello, {{currentUser.firstName}}</p>
+    <button mat-raised-button (click)="logout()">Log out</button>
+</div>
 <br>
 <ul id="navigationBar">
     <li id="home" [routerLink]="'/'">Home</li>
@@ -8,4 +12,5 @@
     <li id="Log in" [routerLink]="'/login'">Log in</li>
 </ul>
 <br>
+
 <router-outlet></router-outlet>

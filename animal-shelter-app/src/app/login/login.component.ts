@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
+import { AccountService } from '../account.service';
 import { Login, Token } from '../login';
 
 @Component({
@@ -12,12 +13,19 @@ export class LoginComponent {
   password: string = "";
   token: Token | undefined;
 
-  constructor(private loginService: LoginService){}
+  constructor(private accountService: AccountService, private router: Router){}
 
   login()
   {
     console.log(this.username + " " + this.password);
-    this.loginService.login(this.username, this.password).subscribe(token => {this.token = token; console.log(this.token)});
-    
+    this.accountService.login(this.username, this.password).subscribe({
+      next: token => {
+        this.token = token;
+        console.log(this.token);
+      },
+      complete: () => {
+        this.router.navigate(['/board']);
+      }
+      });
   }
 }
